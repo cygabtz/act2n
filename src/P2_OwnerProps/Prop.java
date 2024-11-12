@@ -11,7 +11,9 @@ public class Prop {
     public Prop(String id, String adress, String city){
         this.propID = id;
         this.adress = adress;
+        this.city = city;
         this.price = 0.0f;
+
     }
 
     public void setPropID(String propID) {

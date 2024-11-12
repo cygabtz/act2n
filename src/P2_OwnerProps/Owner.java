@@ -52,9 +52,12 @@ public class Owner {
 
     public float cheapestPrice(){
         float cheap = Float.MAX_VALUE;
+
         for (int i = 0; i<=numProps; i++){
-            if (this.props[i].getPrice()<cheap){
-                cheap = props[i].getPrice();
+            if (props[i]!=null){
+                if (this.props[i].getPrice()<cheap){
+                    cheap = props[i].getPrice();
+                }
             }
         }
         return cheap;
@@ -62,7 +65,9 @@ public class Owner {
 
     public float expensivePrice(){
         float expensive = Float.MIN_VALUE;
-        for (int i = 0; i<=numProps; i++){
+        for (int i = 0; i<numProps; i++){
+
+
             if (this.props[i].getPrice()>expensive){
                 expensive = props[i].getPrice();
             }
@@ -71,6 +76,7 @@ public class Owner {
     }
 
     public float averagePrices(){
+        if (numProps==0){return 0;}
         float sum = 0;
         for (int i = 0; i<numProps; i++){
             sum = props[i].getPrice();
